@@ -49,7 +49,7 @@ The meaning of each hyper-parameter is listed as follows:
 | `config_path`    | Path of the configuration file. For example: `scripts/configs/cond_demo/demo1.yml`.                                    |
 | `batch_size`    | Batch size for generation. Default: 4.                                                                         |
 | `num_samples`   | How many samples to generate in total. Default: 20.                                                           |
-| `data_dir`      | Directory to store data. Used to extract rule label from existing music excerpts. Do not need if target rule labels are given (just leave blank in this case). |
+| `data_dir`      | Optional: directory to store data. Used to extract rule label from existing music excerpts. Do not need if target rule labels are given (just leave as default value in this case). |
 | `model`         | Model backbone for diffusion model. Default: DiTRotary_XL_8. |
 | `model_path`    | Path of the pretrained diffusion model.  |
 | `image_size`    | Size of the generated piano roll in latent space (for 10.24s, the size is 128x16).            |
