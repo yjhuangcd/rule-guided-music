@@ -1,14 +1,16 @@
-# Stochastic Control Guidance for Symbolic Music Generation
+# Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion
 
-This is the codebase for the paper: Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion.
+This is the codebase for the paper: Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion. 
 
-# Set up the environment
+We introduced a symbolic music generator with non-differentiable rule guided diffusion models,  drawing inspiration from stochastic control. For music demos, please visit our [project website](https://scg-rule-guided-music.github.io/).
+
+## Set up the environment
 
 - Put the pretrained VAE checkpoint under `taming-transformers/checkpoints`
 - Create conda virtual environment via: `conda env create -f environment.yml`
 - Activating virtual env: `conda activate guided`
 
-# Download Pretrained Checkpoints
+## Download Pretrained Checkpoints
 - Download the pretrained [VAE](https://drive.google.com/file/d/1MjCmgM_76Jx0M9_1-cqU4BWrCki688vX/view?usp=share_link) checkpoint and put it under `taming-transformers/checkpoints/all_onset/epoch_14.ckpt`.
 - Download the pretrained [Diffusion Model](https://drive.google.com/file/d/1Fk1CqdwTC3QbtWC0sU7ZYLIhYAw97JlC/view?usp=share_link) checkpoint and put it under `loggings/checkpoints/ema_0.9999_1200000.pt`.
 - Download the pretrained [classifier](https://drive.google.com/file/d/1Gcq-s8SUgxE8lwm8y6-YnolXpncpfjpP/view?usp=share_link) checkpoints for each rule and put them under `loggings/classifier/`.
@@ -82,7 +84,7 @@ python scripts/edit.py
 ```
 
 
-# Train diffusion model for music generation
+## Train diffusion model for music generation
 To train a diffusion model for symbolic music generation, using the following script.
 ```
 mpiexec -n 8 python scripts/train_dit.py
@@ -124,7 +126,7 @@ The meaning of each hyper-parameter is listed as follows:
 | `fs`              | Time resolution is 1 / fs. |
 | `save_interval`   | Frequency of saving checkpoints, e.g., every 10k steps.                                                           |
 
-# References
+## References
 This repository is based on [openai/guided-diffusion](https://github.com/openai/guided-diffusion), with modifications for data representation, guidance algorithm and architecture improvements.
 - The VAE architecture is modified upon [taming-transformers](https://github.com/CompVis/taming-transformers). 
 - The DiT architecture is modified upon [DiT](https://github.com/facebookresearch/DiT).
