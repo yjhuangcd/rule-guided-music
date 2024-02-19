@@ -1,0 +1,26 @@
+target_rules:
+  pitch_hist: Null
+  vertical_nd: Null
+  horizontal_nd: Null
+  chord_progression: Null
+
+guidance:
+  vae: False  # whether need to decode during sampling process
+  nn: True   # whether to use classifier
+  scg: False
+  method: dps
+  schedule: False
+  step_size: 1.  # need to tune step size for dps
+  cond_fn:
+    rule_names: ['pitch_hist', 'note_density', 'chord_progression']
+    fns: ['nn_z0_mse_dummy', 'nn_z0_mse_dummy', 'nn_z0_chord_dummy']
+    classifier_scales: [40., 1., 1.]   # use the balance different loss, not for step size
+    classifiers:
+      num_classes: [12, 16, 8]
+      names: ['DiTRotary-S/8-cls', 'DiTRotary-S/8-cls', 'DiTRotary-S/8-chord-cls']
+      paths: ['loggings/classifier/pitch/model009999.pt', 'loggings/classifier/nd/model009999.pt', 'loggings/classifier/chord/model004999.pt']
+
+sampling:
+  use_ddim: False
+  diff_collage: False
+  t_end: 0  # early stopping for ddpm

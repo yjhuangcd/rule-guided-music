@@ -1,0 +1,29 @@
+target_rules:
+  vertical_nd: Null
+  horizontal_nd: Null
+
+guidance:
+  vae: True  # whether need to decode during sampling process
+  nn: True   # whether to use classifier
+  scg: True
+  method: classifier_guidance
+  cond_fn:
+    rule_names: ['note_density']
+    fns: ['grad_nn_zt_mse']
+    classifier_scales: [10.]
+    classifiers:
+      num_classes: [16]
+      names: ['DiTRotary-S/8-cls']
+      paths: ['loggings/classifier/nd/model009999.pt']
+  schedule: True
+  t_start: 750   # when to start use guidance
+  t_end: 0   # when to end use guidance
+  interval: 1  # interval between successive guidance step
+
+scg:
+  num_samples: 4
+
+sampling:
+  use_ddim: False
+  diff_collage: False
+  t_end: 0  # early stopping for ddpm

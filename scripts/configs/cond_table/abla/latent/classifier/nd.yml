@@ -1,0 +1,22 @@
+target_rules:
+  vertical_nd: Null
+  horizontal_nd: Null
+
+guidance:
+  vae: False  # whether need to decode during sampling process
+  nn: True   # whether to use classifier
+  scg: False
+  method: classifier_guidance
+  cond_fn:
+    rule_names: ['note_density_pixel']
+    fns: ['grad_nn_zt_mse']
+    classifier_scales: [10.]
+    classifiers:
+      num_classes: [16]
+      paths: ['loggings/classifier/pixel/nd/model009999.pt']
+  schedule: False
+
+sampling:
+  use_ddim: False
+  diff_collage: False
+  t_end: 0  # early stopping for ddpm

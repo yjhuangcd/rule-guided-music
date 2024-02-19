@@ -1,0 +1,21 @@
+target_rules:
+  chord_progression_pixel: Null
+
+guidance:
+  vae: False  # whether need to decode during sampling process
+  nn: True   # whether to use classifier
+  scg: False
+  method: classifier_guidance
+  cond_fn:
+    rule_names: ['chord_progression_pixel']
+    fns: ['grad_nn_zt_chord']
+    classifier_scales: [10.]
+    classifiers:
+      num_classes: [8]
+      paths: ['loggings/classifier/pixel/chord/model004999.pt']
+  schedule: False
+
+sampling:
+  use_ddim: False
+  diff_collage: False
+  t_end: 0  # early stopping for ddpm

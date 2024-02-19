@@ -1,0 +1,27 @@
+target_rules:
+  chord_progression: Null
+
+guidance:
+  vae: True  # whether need to decode during sampling process
+  nn: False   # whether to use classifier
+  scg: True
+  method: no_guidance
+  cond_fn: Null
+  schedule: True
+  t_start: 750   # when to start use guidance
+  t_end: 0   # when to end use guidance
+  interval: 1  # interval between successive guidance step
+
+scg:
+  num_samples: 16
+
+sampling:
+  use_ddim: False
+  diff_collage: False
+  t_end: 0  # early stopping for ddpm
+
+edit:
+  source: dataset
+  noise_level: 500
+  l_start: 0
+  l_end: 128

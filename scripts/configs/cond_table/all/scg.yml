@@ -1,0 +1,29 @@
+target_rules:
+  pitch_hist: Null
+  vertical_nd: Null
+  horizontal_nd: Null
+  chord_progression: Null
+
+guidance:
+  vae: True  # whether need to decode during sampling process
+  nn: False   # whether to use classifier
+  scg: True
+  method: no_guidance
+  cond_fn: Null
+  schedule: True
+  t_start: 750   # when to start use guidance
+  t_end: 0   # when to end use guidance
+  interval: 1  # interval between successive guidance step
+
+scg:
+  num_samples: 16
+  # weight for different losses
+  pitch_hist: 40.
+  note_density: 1.
+  chord_progression: 1.
+
+sampling:
+  use_ddim: False
+  diff_collage: False
+  t_end: 0  # early stopping for ddpm
+

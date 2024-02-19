@@ -1,0 +1,22 @@
+target_rules:
+  pitch_hist: Null
+
+guidance:
+  vae: False  # whether need to decode during sampling process
+  nn: True   # whether to use classifier
+  scg: False
+  method: dps
+  schedule: False
+  step_size: 0.1  # need to tune step size for dps
+  cond_fn:
+    rule_names: ['pitch_hist']
+    fns: ['nn_z0_mse_dummy']
+    classifier_scales: [1.]   # use the balance different loss, not for step size
+    classifiers:
+      num_classes: [12]
+      paths: ['loggings/classifier/pixel/pitch/model009999.pt']
+
+sampling:
+  use_ddim: False
+  diff_collage: False
+  t_end: 0  # early stopping for ddpm
