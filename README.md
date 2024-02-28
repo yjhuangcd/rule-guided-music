@@ -134,3 +134,18 @@ This repository is based on [openai/guided-diffusion](https://github.com/openai/
 - The DiT architecture is modified upon [DiT](https://github.com/facebookresearch/DiT).
 - Music evaluation code is adapted from [mgeval](https://github.com/RichardYang40148/mgeval) and [figaro](https://github.com/dvruette/figaro).
 - MIDI to piano roll representation is adapted from [pretty_midi](https://github.com/craffel/pretty-midi).
+
+
+
+
+Please consider citing the following paper when using our code for your application.
+
+```bibtex
+@inproceedings{music_control,
+  author    = {Yujia Huang and Adishree Ghatare and Yuanzhe Liu and Ziniu Hu and Qinsheng Zhang and Chandramouli S Sastry and Siddharth Gururani and Sageev Oore and Yisong Yue},
+  title     = {Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion},
+  year      = {2024},
+  url       = {https://arxiv.org/abs/2402.14285},
+  archivePrefix = {arXiv},
+}
+```
