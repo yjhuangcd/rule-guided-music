@@ -1,8 +1,10 @@
 # Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion
 
-This is the codebase for the paper: Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion. 
+This is the codebase for the paper: [Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion](https://arxiv.org/abs/2402.14285). 
 
 We introduced a symbolic music generator with non-differentiable rule guided diffusion models,  drawing inspiration from stochastic control. For music demos, please visit our [project website](https://scg-rule-guided-music.github.io/).
+
+<img align="center" src="rule_guided_music_gen.png" width="750">
 
 ## Set up the environment
 
