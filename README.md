@@ -2,7 +2,7 @@
 
 This is the codebase for the paper: [Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion](https://arxiv.org/abs/2402.14285). 
 
-We introduced a symbolic music generator with non-differentiable rule guided diffusion models,  drawing inspiration from stochastic control. Please check [here](https://drive.google.com/drive/folders/1HHJ-TVhC4O9bnIKWvSC7cGq6PQ8UqrDu?usp=share_link)for the mp3 and midi files of the generated music. For more music demos, please visit our [project website](https://scg-rule-guided-music.github.io/).
+We introduced a symbolic music generator with non-differentiable rule guided diffusion models,  drawing inspiration from stochastic control. Please check [here](https://drive.google.com/drive/folders/1HHJ-TVhC4O9bnIKWvSC7cGq6PQ8UqrDu?usp=share_link) for the mp3 and midi files of the generated music. For more music demos, please visit our [project website](https://scg-rule-guided-music.github.io/).
 
 <img align="center" src="rule_guided_music_gen.png" width="750">
 
