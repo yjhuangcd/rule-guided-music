@@ -13,9 +13,9 @@ We introduced a symbolic music generator with non-differentiable rule guided dif
 - Activating virtual env: `conda activate guided`
 
 ## Download Pretrained Checkpoints
-- Download the pretrained [VAE](https://drive.google.com/file/d/1MjCmgM_76Jx0M9_1-cqU4BWrCki688vX/view?usp=share_link) checkpoint and put it under `taming-transformers/checkpoints/all_onset/epoch_14.ckpt`.
-- Download the pretrained [Diffusion Model](https://drive.google.com/file/d/1Fk1CqdwTC3QbtWC0sU7ZYLIhYAw97JlC/view?usp=share_link) checkpoint and put it under `loggings/checkpoints/ema_0.9999_1200000.pt`.
-- Download the pretrained [classifier](https://drive.google.com/file/d/1Gcq-s8SUgxE8lwm8y6-YnolXpncpfjpP/view?usp=share_link) checkpoints for each rule and put them under `loggings/classifier/`.
+- Download the pretrained [VAE](https://huggingface.co/yjhuangcd/rule-guided-music/tree/main/trained_models/VAE) checkpoint and put it under `taming-transformers/checkpoints/all_onset/epoch_14.ckpt`.
+- Download the pretrained [Diffusion Model](https://huggingface.co/yjhuangcd/rule-guided-music/tree/main/trained_models/diffusion) checkpoint and put it under `loggings/checkpoints/ema_0.9999_1200000.pt`.
+- Download the pretrained [classifier](https://huggingface.co/yjhuangcd/rule-guided-music/tree/main/trained_models/classifier) checkpoints for each rule and put them under `loggings/classifier/`.
 
 ## Rule Guided Generation
 All the configs of the rule guidance are stored in `scripts/configs/`. `cond_demo` contains the configs that we used to generate the demos for composer co-creation. `cond_table` contains the configs that we used to create the table in the paper. `edit` contains the configs of editing an existing excerpt.
